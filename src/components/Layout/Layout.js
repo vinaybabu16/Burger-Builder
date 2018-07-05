@@ -4,7 +4,7 @@ import layoutStyles from './Layout.css';
 
 const layout = (props) => (
     <Aux>
-        <div> toolbar, sidedrawer, backdrop </div>
+        <div> toolbar, sidedrawer </div>
         <main className = {layoutStyles.Content} >
             {props.children}
         </main>
