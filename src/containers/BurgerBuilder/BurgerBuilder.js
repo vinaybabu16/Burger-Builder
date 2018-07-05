@@ -37,6 +37,9 @@ class BurgerBuilder extends Component{
     buyingHandler = () => {
         this.setState({buying: true});
     }
+    continueHandler = () => {
+        alert('Clicked on continue');
+    }
     addIngredientHandler = (types) => {
         const updatedCount = this.state.ingredients[types] + 1;
         const updatedIngredients = {...this.state.ingredients};
@@ -77,7 +80,9 @@ class BurgerBuilder extends Component{
         return(
             <Aux>
                 <Modal buying = {this.state.buying} clicked={this.hideModalHandler}>
-                    <OrderSummary ingredients = {this.state.ingredients}/>
+                    <OrderSummary ingredients = {this.state.ingredients}
+                               cancelClicked = {this.hideModalHandler} 
+                               continueClicked = {this.continueHandler}/>
                 </Modal>
                 <Burger ingredients={this.state.ingredients}/>
                 <BuildControls ingredientAdder = {this.addIngredientHandler}
