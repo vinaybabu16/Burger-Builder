@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import styles from './Modal.css';
-import Aux from '../../../hoc/Aux'
+import Aux from '../../../hoc/Auxilary'
 import Backdrop from '../Backdrop/Backdrop';
 
 class Modal extends Component{
@@ -8,6 +8,7 @@ class Modal extends Component{
         return nextProps.buying !== this.props.buying || nextProps.children !== this.props.children;
     }
     render(){
+       
         return(
             <Aux>
                  <Backdrop show = {this.props.buying} clicked = {this.props.clicked}> </Backdrop>
